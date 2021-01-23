@@ -78,3 +78,30 @@ for (let key in userTwo) {
   console.log[userTwo[key]]; //returns values
   console.log(userTwo.key); //RETURNS UNDEFINED: values but doesnt work on this type of object
 }
+console.log("Greetings from main.js");
+
+
+
+//EVENT LISTENERS
+
+function saysHiToUser(user) {
+  return `Hello ${user}!`;
+}
+
+function saysGoodbyeToUser(user) {
+  return `Goodbye ${user}!`;
+}
+
+
+//FUNCTIONS THAT TAKES IN A FUNCTION AS AN ARGUMENT
+function createGreeting(user, cb) {
+  return cb(user);
+}
+
+createGreeting('Dani', saysHiToUser);
+createGreeting('Dani', saysLaterToUser);
+
+
+/// needs a function or a callback
+/// callback accept 2 arguements one is a function and one is a call back or event
+/// function is like a copy machine, reusable
