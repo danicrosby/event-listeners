@@ -78,3 +78,63 @@ for (let key in userTwo) {
   console.log[userTwo[key]]; //returns values
   console.log(userTwo.key); //RETURNS UNDEFINED: values but doesnt work on this type of object
 }
+
+
+
+//EVENT LISTENERS 
+// IS ANYTHING THAT HAPPENS ON THE DOM (MOUSE EVENT ETC)
+// event listeners is just a function on the DOM
+// when we select an element on the dom you can add an event listener
+
+//CLICK EVENT
+
+//targeting ID of element on DOM
+//ADD EVENT: what am I listening for:this example is with Event and a function
+//SPECIFIC ITEM FUNCTION/EVENT
+// const button4 = document.querySelector('#main-btn');
+
+// button.addEventListener('click', (event) => {
+//   console.log(`You clicked ${event.target.id}!`);
+// });
+
+
+// FOR GENERIC/MULTIPLE ITEMS (PRINTER)
+// const whatIsTheId = (event) => {
+//   console.log(`You clicked ${event.target.id}!`);
+// }
+// button.addEventListener('click', whatIsTheId)
+
+
+
+//TARGET 'OTHER-BUTTON' AND CLICK, RUN whatIsTheId
+// const button2 = document.querySelector('#other-button');
+// button2.addEventListener('click', whatIsTheId); //accessing the generic function we made ealier
+
+
+//event listeners pass a function or a call back (e)
+// target events within 
+//click is an event
+//first argument is always a named event
+//second is the event itself
+//target mean what ever button is click
+//looking for a clicked , then giving the id that was clicked
+
+//ADDING LOGIC
+const button = document.querySelector('#main-btn');
+const container = document.querySelector('#container');
+const button2 = document.querySelector('#other-button');
+
+
+
+const whatIsTheId = (event) => {
+  // console.log(event) 
+  console.log(`You clicked ${event.target.id}!`);
+
+  if (event.target.id === 'main-btn') {
+    container.innerHTML = 'You clicked the MAIN BUTTON';
+  } else {
+    container.innerHTML = 'You clicked the OTHER CONTAINER';
+  }
+}
+// button.addEventListener('click', whatIsTheId);
+button2.addEventListener('click', whatIsTheId);
