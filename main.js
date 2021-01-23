@@ -78,3 +78,28 @@ for (let key in userTwo) {
   console.log[userTwo[key]]; //returns values
   console.log(userTwo.key); //RETURNS UNDEFINED: values but doesnt work on this type of object
 }
+
+
+
+
+
+//DOM SELECTORS
+
+//GET ELEMENT BY ID only
+const button = document.getElementById('main-btn');
+console.log(button);
+
+//QUERY SELECTORS
+//GET BY BOTH CLASS AND ID
+//id starts with #
+//div is just the name of the element
+
+const button1 = document.querySelector('main-btn');
+console.log(button1);
+
+//TARGET SOMETHING FOR CSS WITH A CLASS
+//TARGET JS WITH AN ID
+
+const button2 = document.querySelector('#main-btn');
+console.log(button2);
+
