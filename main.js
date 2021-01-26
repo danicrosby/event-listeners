@@ -1,80 +1,65 @@
 console.log("greetings, beautiful from main.js")
 
 
-const firstObj = {};
-
-const user = {
-  username: 'biz.makie',
-  password: 'abcd1234', 
-  lovesJS: true,
-  favoriteNumber: 42,
-}
-
-//DOT NOTATION 
-
-// GET VALUES OF THE OBJECT (define the object then the key value)
-console.log(user.lovesJS); //true
-console.log(user.username); //biz.makie
-console.log(user.favoriteNumber); //42
-
-
-// BRACKET NOTATION 
-// GET VALUES OF THE OBJECT (define the object, inside the brackets use a string)
-console.log(user['usernname']);
-console.log(user['favoriteNumber']);
-
-
-// ASSIGNING VALUES
-
-// DOT NOTATION
-// HOW TO ACCESS KEY VALUE PAIR
-const newUser = {
-  isNew: true,
-}
-
-newUser.username = 'fresh.prince';
-console.log(newUser);
-
-// BRACKET NOTATIONS 
-newUser['password'] = 'abcd1234';
-console.log(newUser);
-
-
-// ACSESSING WITH ANNON FUNCTION
-const newObject = {
-  username: 'Teresa',
-  sayHello:
-  function () {  //This is an annonymous function
-    console.log('Hi, Everyone!');
-  }
-}
-
-// newObject.sayHello(); //'Hi, Everyone!'
-
-
-// METHODS (FUNCTIONS AS VALUES)
-const newObject1 = {
-  username: 'Teresa',
-  sayHello: function () {  //This is an annonymous function
-    console.log(`${this.username} says Hello`);
-  }
-}
-
-// newObject1.saysHello(); //Teresa says hello
-
-
-// ITERATING OVER OBJECT FOR IN LOOP
-// need to define key in object is
-
-const userTwo = {
-  username: 'trinity.christiana',
-  password: 'xyz0987',
-  lovesJS: true,
-  favNum: 12,
-}
-
-for (let key in userTwo) {
-  console.log(key);  // returns all keys
-  console.log[userTwo[key]]; //returns values
-  console.log(userTwo.key); //RETURNS UNDEFINED: values but doesnt work on this type of object
-}
+const pies = [
+  {
+    name: 'Dutch Apple Pie',
+    ingredients: 'apples,sugar,butter,nutmeg,dutch people',
+    bakeTemp: 5000,
+    drinkPairing: 'Earl Grey Tea',
+    imageUrl:
+      'https://images-gmi-pmc.edge-generalmills.com/b6a2a4e7-73f5-4aec-9bb6-f2b5054d65e6.jpg',
+    instructor: 'Doc',
+    iceCream: 'Vanilla',
+  },
+  {
+    name: 'Berry Pie',
+    ingredients: 'berries',
+    bakeTemp: 400,
+    drinkPairing: 'wine',
+    imageUrl:
+      'https://tastesbetterfromscratch.com/wp-content/uploads/2015/11/Triple_Berry_Pie8.jpg',
+    instructor: 'Doc',
+    iceCream: 'banana',
+  },
+  {
+    name: 'Pumpkin Pie',
+    ingredients: 'pumpkins, nutmeg, cinnamon, graham crackers, pilgrims',
+    bakeTemp: 42,
+    drinkPairing: 'egg nog',
+    imageUrl:
+      'https://cf-images.us-east-1.prod.boltdns.net/v1/static/1033249144001/22a0c25d-2fee-415c-a4e7-91d008e276bb/a904f3e2-3cd9-40d6-ace9-f8dbd2d616cd/1280x720/match/image.jpg',
+    instructor: 'Aja',
+    iceCream: 'Vanilla',
+  },
+  {
+    name: 'Shoo Fly Pie',
+    ingredients: 'Molasses, nutmeg, cinnamon, butter, graham cracker ',
+    bakeTemp: 1234,
+    drinkPairing: 'Apple Cider',
+    imageUrl:
+      'https://static01.nyt.com/images/2016/09/27/dining/27COOKING-SHOOFLY-PIE2/27COOKING-SHOOFLY-PIE2-articleLarge.jpg',
+    instructor: 'Aja',
+    iceCream: 'Coffee',
+  },
+  {
+    name: 'Pecan Pie',
+    ingredients: 'Pecans, sugar, butter, flour',
+    bakeTemp: 5000,
+    drinkPairing: 'Milk',
+    imageUrl:
+      'https://cookiesandcups.com/wp-content/uploads/2018/10/pecanpie-3.jpg',
+    instructor: 'Trinity',
+    iceCream: 'Vanilla',
+  },
+  {
+    name: 'Keylime Pie',
+    ingredients: 'lemons, sugar, butter, flour',
+    bakeTemp: 5000,
+    drinkPairing: 'Water',
+    imageUrl:
+      'https://www.browneyedbaker.com/wp-content/uploads/2012/05/key-lime-pie-2-1200.jpg',
+    instructor: 'Trinity',
+    iceCream: 'none',
+  },
+];
