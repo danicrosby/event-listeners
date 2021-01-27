@@ -14,13 +14,22 @@
     <title>Objects, DOM, and Events</title>
   </head>
   <body>
-    <form>
-
+    <div class="container mt-3 text-center">
+      <div id="instructor-buttons">
+        <button type="button" class="btn btn-primary" id="All">All</button>
+        <button type="button" class="btn btn-secondary" id="Doc">Dr. T</button>
+        <button type="button" class="btn btn-success" id="Aja">Aja</button>
+        <button type="button" class="btn btn-danger" id="Trinity">Trinity</button>
+      </div>
+      <div id="pies" class="d-flex flex-wrap justify-content-around"></div>
+      <hr />
+      <div class="pie-form"></div>
+    </div>
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="Name" required>
       </div>
-
+      <form>
       <div class="form-group">
         <label for="indredients">Name</label>
         <input type="text" class="form-control" id="ingredients" required>
