@@ -1,28 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link rel="stylesheet" href="main.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="container mt-3 text-center">
-    <div id="instructor-buttons">
-      <button type="button" class="btn btn-primary" id="ALL">All</button>
-      <button type="button" class="btn btn-secondary"id="Doc">Dr. T</button>
-      <button type="button" class="btn btn-success"id="Aja">Aja</button>
-      <button type="button" class="btn btn-danger"id="Trinity">Trinity</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>Objects, DOM, and Events</title>
+  </head>
+  <body>
+    <div class="container mt-3 text-center">
+      <div id="instructor-buttons">
+        <button type="button" class="btn btn-primary" id="All">All</button>
+        <button type="button" class="btn btn-secondary" id="Doc">Dr. T</button>
+        <button type="button" class="btn btn-success" id="Aja">Aja</button>
+        <button type="button" class="btn btn-danger" id="Trinity">Trinity</button>
+      </div>
+      <div id="pies" class="d-flex flex-wrap justify-content-around"></div>
+      <hr />
+      <div class="pie-form"></div>
     </div>
-    <div id="pies"></div>
-    <hr>
-    <div class="pie-form"></div>
-  </div>
-  
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <form>
+      <div class="mb-3">
+        <label for="indredients">Name</label>
+        <input type="text" class="form-control" id="ingredients" required>
+      </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-  <script src="main.js"></script>
-</body>
+      <div class="mb-3">
+        <label for="bakeTemp">Bake Temp</label>
+        <input type="number" class="form-control" id="bakeTemp" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="drinkParing">Drink Pairing</label>
+        <input type="text" class="form-control" id="drinkPairing" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="imageURL">Image URL</label>
+        <input type="url" class="form-control" id="imageURL" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="instructor">Instructor</label>
+        <input type="select" class="form-control" id="instructor" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="iceCream">Ice Cream</label>
+        <input type="text" class="form-control" id="iceCream" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
 </html>

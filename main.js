@@ -1,5 +1,4 @@
-console.log("greetings, beautiful from main.js")
-
+console.log('CONNECTED!');
 
 const pies = [
   {
@@ -63,3 +62,136 @@ const pies = [
     iceCream: 'none',
   },
 ];
+
+// let filtered = false;
+// const selectedPies = [];
+
+const printToDom = (divId, textToPrint) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = textToPrint;
+}
+
+const pieBuilder = (taco) => {
+  let domString = '';
+  for (let i = 0; i < taco.length; i++) {
+    domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
+                    <div class="img-container" style="background-image: url('${taco[i].imageUrl}');"></div>
+                    <div class="card-body">
+                      <p class="card-text">${taco[i].name}</p>
+                      <p class="card-text">${taco[i].ingredients}</p>
+                      <p class="card-text">${taco[i].bakeTemp}</p>
+                      <p class="card-text">${taco[i].drinkPairing}</p>
+                      <p class="card-text">${taco[i].iceCream}</p>
+                      <button type="button" class="btn btn-danger" id="${i}">Delete</button>
+                    </div>
+                  </div>`;
+  }
+
+  printToDom('#pies', domString);
+}
+
+const handleButtonClick = (e) => {
+  const buttonId = e.target.id;
+
+  // CHANGING BG COLOR BASED ON BUTTON CLICK
+  if (buttonId === 'Trinity') {
+    // DARK MODE
+    document.querySelector('body').style.backgroundColor = '#000';
+  } else if (buttonId === 'Doc') {
+    // LIGHT MODE
+    document.querySelector('body').style.backgroundColor = '#FFF';
+  } else if (buttonId === 'Aja') {
+    // MEDIUM MODE
+    document.querySelector('body').style.backgroundColor = '#808080';
+  } else if (buttonId === 'All') {
+    // DEFAULT
+    document.querySelector('body').style.backgroundColor = 'rgb(175, 196, 175)';
+  }
+
+  // UPDATE THE PIES BASED ON BUTTON CLICKED
+  const selectedPies = [];
+  // pies[0].instructor // 'Doc'
+  for (let i = 0; i < pies.length; i++) {
+    if (pies[i].instructor === buttonId) {
+      selectedPies.push(pies[i]);
+    }
+  }
+
+  if (buttonId === 'All') {
+    // PRINT ALL THE PIES
+    filtered = false;
+    pieBuilder(pies);
+  } else {
+    filtered = true;
+    pieBuilder(selectedPies);
+  }
+  
+  console.log(filtered);
+
+}
+
+
+// C in CRUD: Create new Pies
+const getFormInfo = (e) => {
+  // Stop the page from refreshing
+  e.preventDefault();
+
+  // Grabbing all the values of the inputs/form fields
+  const name = document.querySelector('#name').value;
+  const ingredients = document.querySelector('#ingredients').value;
+  const bakeTemp = document.querySelector('#bakeTemp').value;
+  const drinkPairing = document.querySelector('#drinkPairing').value;
+  const imageUrl = document.querySelector('#imageUrl').value;
+  const instructor = document.querySelector('#instructor').value;
+  const iceCream = document.querySelector('#iceCream').value;
+
+  // Short hand object notation to add values to obj
+  const obj = {
+    name,
+    bakeTemp,
+    ingredients,
+    drinkPairing,
+    imageUrl,
+    instructor,
+    iceCream,
+  }
+
+  // Pushing the new object up to the pies array
+  pies.push(obj);
+
+  // Rebuilding the DOM
+  pieBuilder(pies);
+
+  document.querySelector('form').reset();
+}
+
+// D in CRUD: Delete the Pie
+const deletePie = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+  if (targetType === 'button') {
+    // DO SOMETHING
+    pies.splice(targetId, 1);
+  } 
+
+  pieBuilder(pies);
+}
+
+const buttonEvents = () => {
+  document.querySelector('#All').addEventListener('click', handleButtonClick);
+  document.querySelector('#Doc').addEventListener('click', handleButtonClick);
+  document.querySelector('#Aja').addEventListener('click', handleButtonClick);
+  document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+  
+  // Targeting the Delete Button
+  document.querySelector('#pies').addEventListener('click', deletePie);
+
+  document.querySelector('form').addEventListener('submit', getFormInfo);
+}
+
+const init = () => {
+  buttonEvents();
+  pieBuilder(pies);
+}
+
+init();
