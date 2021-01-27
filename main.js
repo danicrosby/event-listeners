@@ -84,6 +84,7 @@ const pieBuilder = (taco) => {
   //                 </div>`;
   // }
 
+    //FOR EACH METHOD
   // taco.forEach((item, i) => {
   //   domString += `<div class="card my-2" style="width: 18rem;" id=${i}>
   //                   <div class="img-container" style="background-image: url('${item.imageUrl}');"></div>
