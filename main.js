@@ -1,4 +1,4 @@
-console.log("greetings, beautiful from main.js")
+console.log('CONNECTED!');
 
 const pies = [
   {
@@ -63,6 +63,9 @@ const pies = [
   },
 ];
 
+// let filtered = false;
+// const selectedPies = [];
+
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
   selectedDiv.innerHTML = textToPrint;
@@ -116,10 +119,14 @@ const handleButtonClick = (e) => {
 
   if (buttonId === 'All') {
     // PRINT ALL THE PIES
+    filtered = false;
     pieBuilder(pies);
   } else {
+    filtered = true;
     pieBuilder(selectedPies);
   }
+  
+  console.log(filtered);
 
 }
 
@@ -158,11 +165,27 @@ const getFormInfo = (e) => {
   document.querySelector('form').reset();
 }
 
+// D in CRUD: Delete the Pie
+const deletePie = (e) => {
+  const targetType = e.target.type;
+  const targetId = e.target.id;
+  if (targetType === 'button') {
+    // DO SOMETHING
+    pies.splice(targetId, 1);
+  } 
+
+  pieBuilder(pies);
+}
+
 const buttonEvents = () => {
   document.querySelector('#All').addEventListener('click', handleButtonClick);
   document.querySelector('#Doc').addEventListener('click', handleButtonClick);
   document.querySelector('#Aja').addEventListener('click', handleButtonClick);
   document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+  
+  // Targeting the Delete Button
+  document.querySelector('#pies').addEventListener('click', deletePie);
+
   document.querySelector('form').addEventListener('submit', getFormInfo);
 }
 
